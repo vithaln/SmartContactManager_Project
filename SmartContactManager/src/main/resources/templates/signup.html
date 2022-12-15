@@ -32,7 +32,7 @@
 
 						<h1 class="text-center">Register here !!</h1>
 
-						<form  th:action="@{/success}" method="post" th:object="${user}">
+						<form  th:action="@{/do_register}" method="post" th:object="${user}">
 
 							<!-- Name field-->
 
@@ -64,7 +64,7 @@
 							<div class="mb-3">
 								<label for="pass" class="form-label">Your Password</label>
 
-								<input type="text" class="form-control" id="pass" required
+								<input type="password" class="form-control" id="pass" required
 									placeholder="Enter your password" name="password" />
 
 							</div>
