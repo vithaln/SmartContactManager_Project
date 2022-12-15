@@ -108,39 +108,35 @@ public class HomeController {
 				
 			}
 			
-		/*//handler for the  registering user details
-				@PostMapping("/do_register")
-				public String registeringUser(@ModelAttribute("user") User user, @RequestParam(value = "agreement",defaultValue = "false") boolean agreement,Model model,RedirectAttributes redirAttrs) {
-					
-						 if (!agreement) {
-						        redirAttrs.addFlashAttribute("error", "The error XYZ occurred.");
-						        return "signup";
-						    }else {
-						    
-							user.setEnabled(true);
-							user.setRole("ROLE_USER");
-							user.setImageURL("default.png");
-							System.out.println("Agreement "+agreement);
-							System.out.println("USER "+user);
-							User result = repo.save(user);
-							model.addAttribute("user",new User());
-							redirAttrs.addFlashAttribute("success", "Everything went just fine.");
-							
-							return "signup";
-							}
-						
-					
-					*/
-						
-						
+		
 			
 					}
-		@PostMapping("/success")
-		public String success() {
+		
+		//handler for custom login
+		@GetMapping("/signin")
+		public String signin(Model model) {
 			
+			model.addAttribute("title","Login page!!");
 			
-			return "success";
+			return "login";
 		}
 		
+		//handler for failure login
+				 @GetMapping("/login_fail")
+				public String loginFailed(Model model) {
+					
+					model.addAttribute("title","Login failed page!!");
+					
+					return "login_fail";
+				}
 		
+				 //success message
+				
+					@PostMapping("/success")
+					public String success(Model model) {
+						
+						model.addAttribute("title","Success page!!");
+						
+						return "success";
+					}
 }

@@ -40,6 +40,10 @@ public class SecurityConfig {
              .requestMatchers("/user/**").hasRole("USER")
              .requestMatchers("/**").permitAll()
              .and().formLogin()
+             .loginPage("/signin")
+             .loginProcessingUrl("/dologin")
+             .defaultSuccessUrl("/user/index")
+             .failureUrl("/login_fail")
              .and().csrf().disable();
              return http.build();
      }
