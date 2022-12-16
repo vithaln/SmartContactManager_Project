@@ -18,7 +18,7 @@
    
     
    <!-- navabar satrt -->
-   <nav id="navbar-example2" class="navbar navbar-dark  px-3 bg-primaryy">
+   <nav  id="navbar-example2" class=" fixed-top navbar navbar-dark  px-3 bg-primaryy">
   <a class="navbar-brand" href="#">SMART_CONTACT_MANAGER</a>
   <ul class="nav nav-pills">
     <li class="nav-item">
@@ -46,15 +46,15 @@
 
 <!-- this is slidebar start-->
 
-<div class="sidebar">
+<div class="sidebar mt-2">
 
 <span onclick= "toggleSidebar()" class="crossbtn">&times;</span>
-<a href="#" class="item"> <i class="fas fa-home"></i> Home</a>
-<a href="#" class="item"> <i class="fas fa-id-card-alt"></i> Add Contacts</a>
+<a th:href="@{/user/index}" class="item"> <i class="fas fa-home"></i> Home</a>
+<a th:href="@{/user/add_contact}" class="item"> <i class="fas fa-id-card-alt"></i> Add Contacts</a>
 <a href="#" class="item"><i class="fas fa-pencil-alt"></i> View Contacts</a>
 <a href="#" class="item"><i class="fas fa-user-circle"></i> Your profile</a>
 <a href="#" class="item"> <i class="fas fa-cogs"></i> Settings</a>
-<a href="#" class="item"> <i class="fas fa-sign-out-alt"></i> Logout</a>
+<a th:href="@{/logout}" class="item"> <i class="fas fa-sign-out-alt"></i> Logout</a>
 
 <div class="divider"></div>
 </div>
@@ -69,7 +69,7 @@
 
 <!-- content start-->
 
-   <div class="content">
+   <div class="content mt-5">
    
    <i onclick="toggleSidebar()" class="fas fa-bars m-3"></i>
     <div th:replace="${content}"></div>

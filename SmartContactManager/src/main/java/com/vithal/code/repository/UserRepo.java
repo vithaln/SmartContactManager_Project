@@ -8,7 +8,6 @@ import com.vithal.code.entities.User;
 
 public interface UserRepo extends JpaRepository<User, Integer> {
 
-
 	@Query("select u from User u where u.email = :email")
 	public User getUserByUserName(@Param("email") String email);
 }
